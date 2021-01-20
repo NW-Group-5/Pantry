@@ -1,7 +1,10 @@
+/*CSS variables*/
 :root {
     --green: rgb(136, 204, 165);
+    --blue: rgb(200, 227, 238);
 }
 
+/*Login/Sign-up rules*/
 .container {
     display: flex;
     flex-direction: column;
@@ -18,7 +21,7 @@
     font-size: 4rem;
 }
 
-form {
+.login-form {
     background: var(--green);
     display: flex;
     flex-direction: column;
@@ -30,10 +33,80 @@ form {
     min-width: 100%;
 }
 
-form>* {
+.login-form>* {
     margin: .5rem;
     text-align: center;
 }
 
 /* form>*:active {
 } */
+
+/*Pantry rules*/
+
+header {
+    box-sizing: border-box;
+    background: var(--green);
+    padding: 2rem;
+    width: 100%;
+}
+
+.body-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: var(--blue);
+    height: calc(100vh - 12rem);
+}
+
+.body-container>* {
+    flex: 1;
+}
+
+.ingredient-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--green);
+    margin: 2rem;
+    height: 80%;
+}
+
+.search {
+    flex: 1;
+    background: var(--blue);
+    margin-top: 2rem;
+    padding: 1rem;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ingredients {
+    flex: 4;
+    background: var(--blue);
+    margin: 2rem;
+    padding: 1rem;
+    width: 80%;
+}
+
+.recipe-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--green);
+    height: 80%;
+    margin-right: 2rem;
+}
+
+.recipes {
+    background: var(--blue);
+    margin: 2rem;
+    padding: 1rem;
+    width: 80%;
+    flex: 1;
+}
