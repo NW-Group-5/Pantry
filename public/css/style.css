@@ -1,0 +1,39 @@
+:root {
+    --green: rgb(136, 204, 165);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.brand {
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+    background: var(--green);
+    padding: 2rem;
+    font-size: 4rem;
+}
+
+form {
+    background: var(--green);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    flex: 1;
+    min-height: 80vh;
+    min-width: 100%;
+}
+
+form>* {
+    margin: .5rem;
+    text-align: center;
+}
+
+/* form>*:active {
+} */
