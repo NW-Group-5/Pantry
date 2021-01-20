@@ -1,7 +1,10 @@
 /*CSS variables*/
 :root {
-    --green: rgb(136, 204, 165);
-    --blue: rgb(200, 227, 238);
+    --shadow: rgba(0, 0, 0, 0.65);
+    --light-brown: rgb(168, 138, 99);
+    --brown: rgb(92, 74, 51);
+    --white: rgb(232, 233, 221);
+    --transparent: rgba(255, 255, 255, 0.1);
 }
 
 /*Login/Sign-up rules*/
@@ -10,26 +13,27 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: var(--light-brown);
+    height: 100vh;
 }
 
 .brand {
     box-sizing: border-box;
     width: 100%;
     text-align: center;
-    background: var(--green);
+    background: var(--light-brown);
     padding: 2rem;
     font-size: 4rem;
 }
 
 .login-form {
-    background: var(--green);
+    background: var(--light-brown);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 1rem;
     flex: 1;
-    min-height: 80vh;
     min-width: 100%;
 }
 
@@ -42,12 +46,27 @@
 } */
 
 /*Pantry rules*/
+.pantry-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+    height: 100vh;
+}
 
 header {
     box-sizing: border-box;
-    background: var(--green);
     padding: 2rem;
     width: 100%;
+    box-shadow: 0px 10px 10px 5px var(--shadow);
+    z-index: 1;
+}
+
+.pantry-brand {
+    font-size: 4rem;
+    color: black;
+    padding: 2rem;
 }
 
 .body-container {
@@ -56,8 +75,9 @@ header {
     justify-content: center;
     align-items: center;
     width: 100%;
-    background: var(--blue);
-    height: calc(100vh - 12rem);
+    height: calc(100vh - 10rem);
+    background-position: -10%;
+    background-color: var(--brown);
 }
 
 .body-container>* {
@@ -69,28 +89,33 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: var(--green);
     margin: 2rem;
     height: 80%;
 }
 
 .search {
     flex: 1;
-    background: var(--blue);
+    background-color: var(--transparent);
     margin-top: 2rem;
     padding: 1rem;
     width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 8px 8px 20px 5px var(--shadow);
+    border-radius: 5px;
+    background-image: url('./wood-pattern.png');
 }
 
 .ingredients {
     flex: 4;
-    background: var(--blue);
+    background-color: var(--transparent);
     margin: 2rem;
     padding: 1rem;
     width: 80%;
+    box-shadow: 8px 8px 20px 5px var(--shadow);
+    border-radius: 5px;
+    background-image: url('./wood-pattern.png');
 }
 
 .recipe-container {
@@ -98,15 +123,17 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: var(--green);
     height: 80%;
     margin-right: 2rem;
 }
 
 .recipes {
-    background: var(--blue);
+    background-color: var(--transparent);
     margin: 2rem;
     padding: 1rem;
     width: 80%;
     flex: 1;
+    box-shadow: 8px 8px 20px 5px var(--shadow);
+    border-radius: 5px;
+    background-image: url('./wood-pattern.png');
 }
