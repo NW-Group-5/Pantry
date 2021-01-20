@@ -9,13 +9,13 @@ app.use(express.static("public"))
 
 //parse as JSON
 app.use(express.urlencoded({
-    extended:true
+    extended: true
 }))
 app.use(express.json())
 
 //CONTROLLER REQUIRE, change name if needed
-const pantry_controller = require("./controllers/pantry_controller")
-app.use(pantry_controller)
+// const pantry_controller = require("./controllers/pantry_controller")
+// app.use(pantry_controller)
 
 const expressHandlebars = require("express-handlebars")
 
@@ -25,6 +25,12 @@ app.engine("handlebars", expressHandlebars({
 
 app.set("view engine", "handlebars")
 
-app.listen(PORT, function(){
-    console.log("app is listening on PORT ", PORT)
-})
+
+const db = require("./models")
+
+
+db.sequelize.sync({ force: true }).then(function () {
+    app.listen(PORT, function () {
+        console.log("App listening on PORT " + PORT);
+    });
+});
