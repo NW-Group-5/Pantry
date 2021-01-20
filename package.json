@@ -1,0 +1,29 @@
+{
+  "name": "5-dollar-idea",
+  "version": "1.0.0",
+  "description": "\"The Pantry\" is a platform that allows users to create a personalized profile of what is inside their pantry and provide suggested recipes based on pantry inventory",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "handlebars": "^4.7.6",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NW-Group-5/5-Dollar-Idea.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NW-Group-5/5-Dollar-Idea/issues"
+  },
+  "homepage": "https://github.com/NW-Group-5/5-Dollar-Idea#readme"
+}
