@@ -5,13 +5,17 @@ module.exports = function(sequelize, DataTypes) {
     //where you can include validation
     })
 
+
+    //association doesnt exist
     //associate UserAccount with UserPantry
+
+    /*
     UserAccount.associate = function(models) {
 
-        UserAccount.HasOne(models.userPantry), {
+        UserAccount.hasOne(models.userPantry), {
             onDelete: "cascade"
         }
     }
-
+*/
     return UserAccount
 }
