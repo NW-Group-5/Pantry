@@ -15,17 +15,30 @@
             </div>
             <div class="ingredients">
                 {{#if ingredients}}
-                    {{#each ingredients}}
-                        <li class="ingredient">{{name}}<span class="aisle">{{aisle}}</span></li>
-                    {{/each}}
+                {{#each ingredients}}
+                <li class="ingredient">{{name}}<span class="aisle">{{aisle}}</span></li>
+                {{/each}}
                 {{else}}
-                    <h1>Your pantry is empty!</h1>
-                    <p>Use the ingredient search above to start stocking up.</p>
+                <h1>Your pantry is empty!</h1>
+                <p>Use the ingredient search above to start stocking up.</p>
                 {{/if}}
             </div>
         </div>
         <div class="recipe-container">
             <div class="recipes">
+                {{#if recipes}}
+                {{#each recipes}}
+                <div class="card">
+                    <img src={{image}} class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{title}}</h5>
+                    </div>
+                </div>
+                    {{/each}}
+                    {{else}}
+                    <h1>You need ingredients!</h1>
+                    <p>Select ingredients to begin reciepe search</p>
+                     {{/if}}
             </div>
         </div>
     </div>
