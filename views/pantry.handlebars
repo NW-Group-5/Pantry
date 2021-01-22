@@ -1,11 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+<div class="pantry-container">
+    <header>
+        <h1 class='pantry-brand'>My Pantry</h1>
+        <nav></nav>
+    </header>
+    <div class="body-container">
+        <div class="ingredient-container">
+            <div class="search">
+                <form>
+                    <input list="ingredients" name="ingredient">
+                    <datalist id="ingredients">
+                    </datalist>
+                    <button class="submit-ingredient">Add Ingredient</button>
+                </form>
+            </div>
+            <div class="ingredients">
+                {{#if ingredients}}
+                    {{#each ingredients}}
+                        <li class="ingredient">{{name}}<span class="aisle">{{aisle}}</span></li>
+                    {{/each}}
+                {{else}}
+                    <h1>Your pantry is empty!</h1>
+                    <p>Use the ingredient search above to start stocking up.</p>
+                {{/if}}
+            </div>
+        </div>
+        <div class="recipe-container">
+            <div class="recipes">
+            </div>
+        </div>
+    </div>
+</div>

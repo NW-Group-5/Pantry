@@ -1,3 +1,3 @@
 USE pantryDB;
 
-INSERT INTO UserAccount (UserName) VALUES ("test_user", "test_password")
+INSERT INTO UserAccounts (UserName, Password, createdAt, updatedAt) VALUES ("test_user", "test_password",current_date(), current_date())
