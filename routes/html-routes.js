@@ -11,18 +11,15 @@ module.exports = function (app) {
     app.get("/", function (req, res) {
         // If the user already has an account send them to the pantry page
         if (req.user) {
-
+            console.log(req.user)
             res.redirect("/pantry");
         }
-        res.render("pantry");
+        res.sendFile(path.join(__dirname, "../public/html/index.html"));
     });
 
-    app.get("/login", function (req, res) {
-        // If the user already has an account send them to the pantry page
-        if (req.user) {
-            res.redirect("/pantry");
-        }
-        res.sendFile(path.join(__dirname, "../public/login.html"));
+    app.get("/signup", function (req, res) {
+
+        res.sendFile(path.join(__dirname, "../public/html/signup.html"));
     });
 
     // Here we've add our isAuthenticated middleware to this route.
@@ -30,4 +27,17 @@ module.exports = function (app) {
     app.get("/pantry", isAuthenticated, function (req, res) {
         res.sendFile(path.join(__dirname, "../public/pantry.html"));
     });
+
+    //route with handlebars
+    app.get("/pantry", isAuthenticated, function (req, res) {
+        db.Ingredient.findAll({
+            where: {
+                UserAccountID: UserAccountID
+            }
+        })
+            .then(function (dbPost) {
+                res.json(dbPost);
+            });
+    })
+
 };
