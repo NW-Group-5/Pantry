@@ -5,8 +5,8 @@ recipes.forEach($card => {
         let recipe = $(event.currentTarget);
         let id = recipe.data('id');
         //Makes two calls to spoonacular to retrieve data
-        $.get(`https://api.spoonacular.com/recipes/${id}/analyzedInstructions?apiKey=7e0116be44374cda976fc934281a347d`, (data) => {
-            $.get(`https://api.spoonacular.com/recipes/${id}/information?apiKey=7e0116be44374cda976fc934281a347d`, data2 => {
+        $.get(`https://api.spoonacular.com/recipes/${id}/analyzedInstructions?apiKey=4c518723a8c64afda5507797e5167881`, (data) => {
+            $.get(`https://api.spoonacular.com/recipes/${id}/information?apiKey=4c518723a8c64afda5507797e5167881`, data2 => {
                 //Removes links at the end of the summary.
                 let summary = data2.summary.slice(0, data2.summary.indexOf('Try <a'));
                 //Makes an array with the full ingredient names with units and amounts
