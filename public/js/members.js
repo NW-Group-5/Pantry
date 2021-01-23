@@ -4,6 +4,6 @@ $(document).ready(function() {
    $.get("/api/user_data").then(function(data) {
       
     // change the member-name
-    $(".member-name").text(data.username);
+    $(".username").text(data.username);
     });
   });
