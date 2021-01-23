@@ -1,28 +1,31 @@
-let apiKey = process.env.API_KEY;
-
-let recipes = Array($('.recipe-card'));
-//Adds a click event to each of the saved recipes
-recipes.forEach($card => {
-    $card.on('click', (event) => {
-        let recipe = $(event.currentTarget);
-        let id = recipe.data('id');
-        //Makes two calls to spoonacular to retrieve data
-        $.get(`https://api.spoonacular.com/recipes/${id}/analyzedInstructions?apiKey=4c518723a8c64afda5507797e5167881`, (data) => {
-            $.get(`https://api.spoonacular.com/recipes/${id}/information?apiKey=4c518723a8c64afda5507797e5167881`, data2 => {
-                //Removes links at the end of the summary.
-                let summary = data2.summary.slice(0, data2.summary.indexOf('Try <a'));
-                //Makes an array with the full ingredient names with units and amounts
-                let ingredients = data2.extendedIngredients.map(ingredient => ingredient.original);
-                //Creates the data to send into our render function
-                let recipeData = {
-                    name: data2.title,
-                    ingredients: ingredients,
-                    imgURL: data2.image,
-                    recipeSteps: data[0].steps,
-                    summary: summary
-                };
-                //Calls the jumbotron render
-                renderRecipe(recipeData);
+$(document).ready(function() {
+    let recipes = Array($('.recipe-card'));
+    //Adds a click event to each of the saved recipes
+    recipes.forEach($card => {
+        $card.on('click', (event) => {
+            let recipe = $(event.currentTarget);
+            let id = recipe.data('id');
+            //Makes two calls to spoonacular to retrieve data
+            $.get(`/api/spoon/steps/${id}`, data => {
+                data = JSON.parse(data);
+                $.get(`/api/spoon/info/${id}`, data2 => {
+                    data2 = JSON.parse(data2);
+                    //Removes links at the end of the summary.
+                    let summary = data2.summary.slice(0, data2.summary.indexOf('Try <a'));
+                    //Makes an array with the full ingredient names with units and amounts
+                    let ingredients = data2.extendedIngredients.map(ingredient => ingredient.original);
+                    //Creates the data to send into our render function
+                    let recipeData = {
+                        name: data2.title,
+                        ingredients: ingredients,
+                        imgURL: data2.image,
+                        recipeSteps: data[0].steps,
+                        summary: summary
+                    };
+                    console.log(recipeData)
+                    //Calls the jumbotron render
+                    renderRecipe(recipeData);
+                });
             });
         });
     });
