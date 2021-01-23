@@ -16,11 +16,11 @@
             <div class="ingredients">
                 {{#if ingredients}}
                 {{#each ingredients}}
-                <li class="ingredient">{{name}}<span class="aisle">{{aisle}}</span></li>
+                    <li class="ingredient">{{name}}<span class="aisle">{{aisle}}</span></li>
                 {{/each}}
                 {{else}}
-                <h1>Your pantry is empty!</h1>
-                <p>Use the ingredient search above to start stocking up.</p>
+                    <h1>Your pantry is empty!</h1>
+                    <p>Use the ingredient search above to start stocking up.</p>
                 {{/if}}
             </div>
         </div>
@@ -28,17 +28,18 @@
             <div class="recipes">
                 {{#if recipes}}
                 {{#each recipes}}
-                <div class="card">
-                    <img src={{image}} class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">{{title}}</h5>
+                    <div class="recipe-card" data-id={{recipe_id}}>
+                        <img src={{image}} class="card-img" alt={{name}}>
+                        <div class="card-body">
+                            <h5 class="card-title">{{name}}</h5>
+                            <p class="card-text">{{summary}}</p>
+                        </div>
                     </div>
-                </div>
-                    {{/each}}
-                    {{else}}
+                {{/each}}
+                {{else}}
                     <h1>You need ingredients!</h1>
                     <p>Select ingredients to begin reciepe search</p>
-                     {{/if}}
+                {{/if}}
             </div>
         </div>
     </div>
