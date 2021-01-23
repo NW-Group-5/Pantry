@@ -9,7 +9,8 @@ module.exports = function(sequelize, DataTypes) {
     });
   
     Ingredient.associate = function(models) {
-      Ingredient.BelongsToMany(models.UserAccount, {
+      Ingredient.belongsTo(models.UserAccount, {
+
       });
     };
   
