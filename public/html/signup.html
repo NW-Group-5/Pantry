@@ -3,20 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Sign Up</title>
 </head>
 <body>
     <div class="container">
         <h1 class="brand">Sign Up</h1>
-        <form class='signup' action="/pantry" method="GET">
-            <input name="username" type="text" placeholder="Create Username">
-            <input name="password" type="text" placeholder="Create Password">
-            <input name="password-repeat" type="text" placeholder="Confirm Password">
-            <input name="submit" type="submit" value="Let's Get Cookin!">
+
+        <form id='signup' class='signup' action="/pantry" method="POST">
+            <h2>Create A Username</h2>
+            <label for="username" class="">Username<label>
+            <input name="username" class="username" id="username" type="text" placeholder="Create Username">
+            <br>
+            <label for="password" class="">Password<label>
+            <input name="password" id="password"  type="text" placeholder="Create Password">     
+            <br>      
+            <label for="confirmpassword" class="">Confirm<label>
+            <input name="confirmpassword" id="confirmpassword" type="text" placeholder="Confirm Password">        
+            <br>
+            <input name="submit" id="sumbit" onclick="signUpUser()" type="submit" value="Let's Get Cookin!">
+            </p>
         </form>
     </div>
-    <script src="../../public/js/signup.js"></script>
+    <script src="/js/signup.js"></script>
 </body>
 </html>
