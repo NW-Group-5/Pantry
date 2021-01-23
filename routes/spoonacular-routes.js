@@ -18,4 +18,22 @@ module.exports = function(app) {
             res.send(body);
         });
     });
+
+    app.get('/api/spoon/suggestions/:value', (req, res) => {
+        let value = req.params.value;
+        let apiKey = process.env.API_KEY;
+        request(`https://api.spoonacular.com/food/ingredients/autocomplete?number=10&query=${value}&apiKey=${apiKey}`, (err, response, body) => {
+            if (err) console.error(err);
+            res.send(body);
+        });
+    });
+
+    app.get('/api/spoon/ingredient/:ingredient', (req, res) => {
+        let ingredient = req.params.ingredient;
+        let apiKey = process.env.API_KEY;
+        request(`https://api.spoonacular.com/food/ingredients/search?query=${ingredient}&number=1&apiKey=${apiKey}`, (err, response, body) => {
+            if (err) console.error(err);
+            res.send(body);
+        });
+    });
 }
