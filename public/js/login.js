@@ -20,12 +20,11 @@ $(document).ready(function() {
     });
     // loginUser does a post to our "api/login" route and if successful, redirects us the the username page
     function loginUser(username, password) {
-      $.post("/api/pantry", {
+      $.post("/api/login", {
         username: username,
         password: password
       })
         .then(function() {
-          window.location.replace("/pantry");
           // If there's an error, log the error
         })
         .catch(function(err) {
