@@ -1,6 +1,8 @@
 const express = require("express");
 
-const session = require("express-session")
+const session = require("express-session");
+
+require('dotenv').config();
 
 //to use Heroku or listen locally
 var PORT = process.env.PORT || 3030;
