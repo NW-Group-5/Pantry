@@ -1,7 +1,7 @@
-let $recipes = Array($('.recipe-card'));
+let recipes = Array($('.recipe-card'));
 //Adds a click event to each of the saved recipes
-$recipes.forEach(card => {
-    card.on('click', (event) => {
+recipes.forEach($card => {
+    $card.on('click', (event) => {
         let recipe = $(event.currentTarget);
         let id = recipe.data('id');
         //Makes two calls to spoonacular to retrieve data
@@ -28,16 +28,20 @@ $recipes.forEach(card => {
 
 //Function that renders the recipe data to the page
 const renderRecipe = data => {
-    let $recipeDiv = $('<div class="jumbo"></div>');
+    let $recipeDiv = $('.jumbo');
+    let $blurDiv = $('.blur');
     let $recipeImg = $(`<img class="jumbo-image" src=${data.imgURL}>`);
     let $recipeName = $(`<h1 class='jumbo-name'>${data.name}</h1>`);
     let $recipeSummary = $(`<p class='jumbo-summary'>${data.summary}</p>`);
     let $recipeIngredients = $('<ul class="jumbo-ingredients"></ul>');
     let $recipeSteps = $('<ul class="jumbo-steps"></ul>');
+    let $close = $('<button class="jumbo-close">X</button>');
 
-    $('body').append($recipeDiv);
-    $recipeDiv.append($recipeImg);
+    $recipeDiv.css('visibility', 'visible');
+    $blurDiv.css('visibility', 'visible');
+    $recipeDiv.append($close);
     $recipeDiv.append($recipeName);
+    $recipeDiv.append($recipeImg);
     $recipeDiv.append($recipeSummary);
     $recipeDiv.append($recipeIngredients);
     $recipeDiv.append($recipeSteps);
@@ -49,6 +53,17 @@ const renderRecipe = data => {
     data.recipeSteps.forEach(step => {
         let stepItem = $(`<li class='jumbo-step'>${step.number}. ${step.step}</li>`);
         $recipeSteps.append(stepItem);
+    });
+
+    let summaryLinks = Array($('.jumbo-summary a'));
+    summaryLinks.forEach($link => {
+        $link.attr('href', '');
+    });
+
+    $('.jumbo-close').on('click', () => {
+        $recipeDiv.html('');
+        $recipeDiv.css('visibility', 'hidden');
+        $blurDiv.css('visibility', 'hidden');
     });
 };
 
