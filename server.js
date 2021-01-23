@@ -28,9 +28,6 @@ require("./routes/UserAccount-api-routes.js")(app);
 
 
 
-//CONTROLLER REQUIRE, change name if needed
-// const pantry_controller = require("./controllers/pantry_controller")
-// app.use(pantry_controller)
 
 const expressHandlebars = require("express-handlebars")
 
