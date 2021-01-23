@@ -10,7 +10,10 @@ Github repository:
 # Dependencies
 node
 express
+express-session
 sequelize
+passport-local
+bcryptjs
 
 # Languages Used
 HTML
