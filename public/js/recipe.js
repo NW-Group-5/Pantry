@@ -1,3 +1,5 @@
+let apiKey = process.env.API_KEY;
+
 let recipes = Array($('.recipe-card'));
 //Adds a click event to each of the saved recipes
 recipes.forEach($card => {
