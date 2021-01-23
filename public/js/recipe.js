@@ -59,17 +59,20 @@ const renderRecipe = data => {
     summaryLinks.forEach($link => {
         $link.attr('href', '');
     });
-
+    $('.jumbo-close').click((event) => {
+        console.log(event);
+        $recipeDiv.html('');
+        $recipeDiv.css('visibility', 'hidden');
+        $blurDiv.css('visibility', 'hidden');
+    });
     $('.jumbo-close').on('mouseover', () => {
         $('.jumbo-close').html('<i class="fas fa-times-circle"></i>');
-        $('.jumbo-close>*').click((event) => {
-            console.log(event);
-            $recipeDiv.html('');
-            $recipeDiv.css('visibility', 'hidden');
-            $blurDiv.css('visibility', 'hidden');
-        });
     });
-    
+    $('.blur').on('click', () => {
+        $recipeDiv.html('');
+        $recipeDiv.css('visibility', 'hidden');
+        $blurDiv.css('visibility', 'hidden');
+    });
     $('.jumbo-close').on('mouseout', () => {
         $('.jumbo-close').html('<i class="far fa-times-circle"></i>');
     });

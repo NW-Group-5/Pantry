@@ -197,6 +197,10 @@ header {
     border: none;
 }
 
+.jumbo-close i {
+    pointer-events: none;
+}
+
 .jumbo-close i:hover {
     cursor: pointer;
 }
