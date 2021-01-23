@@ -181,27 +181,27 @@ header {
 
 .jumbo-close {
     position: absolute;
-    right: 0;
-    top: 0;
-    width: 1.75rem;
-    height: 1.75rem;
+    right: .3rem;
+    top: .3rem;
+    width: 2rem;
+    height: 2rem;
     border-radius: 0%;
     border: none;
-    border-left: 1px solid black;
-    border-bottom: 1px solid black;
-    border-bottom-left-radius: 10px;
-    box-sizing: border-box;
-    background: var(--light-brown);
-    color: black;
-    font-weight: 800;
+    background: transparent;
+    font-size: 1.5rem;
+    text-align: center;
 }
 
 .jumbo-close:focus, .jumbo-close:hover {
     outline: none;
-    border-bottom: 2px black solid;
-    border-left: 2px black solid;
-    box-shadow: 1px 1px 5px 1px var(--shadow);
-    background: var(--shadow);
+    border: none;
+}
+
+.jumbo-close i {
+    pointer-events: none;
+}
+
+.jumbo-close i:hover {
     cursor: pointer;
 }
 

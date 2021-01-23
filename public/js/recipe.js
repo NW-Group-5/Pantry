@@ -35,7 +35,7 @@ const renderRecipe = data => {
     let $recipeSummary = $(`<p class='jumbo-summary'>${data.summary}</p>`);
     let $recipeIngredients = $('<ul class="jumbo-ingredients"></ul>');
     let $recipeSteps = $('<ul class="jumbo-steps"></ul>');
-    let $close = $('<button class="jumbo-close">X</button>');
+    let $close = $('<button class="jumbo-close"><i class="far fa-times-circle"></i></button>');
 
     $recipeDiv.css('visibility', 'visible');
     $blurDiv.css('visibility', 'visible');
@@ -59,11 +59,22 @@ const renderRecipe = data => {
     summaryLinks.forEach($link => {
         $link.attr('href', '');
     });
-
-    $('.jumbo-close').on('click', () => {
+    $('.jumbo-close').click((event) => {
+        console.log(event);
         $recipeDiv.html('');
         $recipeDiv.css('visibility', 'hidden');
         $blurDiv.css('visibility', 'hidden');
+    });
+    $('.jumbo-close').on('mouseover', () => {
+        $('.jumbo-close').html('<i class="fas fa-times-circle"></i>');
+    });
+    $('.blur').on('click', () => {
+        $recipeDiv.html('');
+        $recipeDiv.css('visibility', 'hidden');
+        $blurDiv.css('visibility', 'hidden');
+    });
+    $('.jumbo-close').on('mouseout', () => {
+        $('.jumbo-close').html('<i class="far fa-times-circle"></i>');
     });
 };
 
