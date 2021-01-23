@@ -1,21 +1,27 @@
 module.exports = function(sequelize, DataTypes) {
     var UserAccount = sequelize.define("UserAccount", {
-    username: DataTypes.STRING,
-    password: DataTypes.STRING
+        username: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true
+        },
+        password: {
+            type: DataTypes.STRING,
+            allowNull: false
+        } 
     //where you can include validation
+    //add more for passport
     })
 
 
-    //association doesnt exist
-    //associate UserAccount with UserPantry
-
-    /*
+    // associate UserAccount with Ingredient and Recipe
     UserAccount.associate = function(models) {
+        UserAccount.hasMany(models.Ingredient, {
+        });
+        UserAccount.hasMany(models.Recipe, {
+        });
+      };
 
-        UserAccount.hasOne(models.userPantry), {
-            onDelete: "cascade"
-        }
-    }
-*/
+
     return UserAccount
 }
