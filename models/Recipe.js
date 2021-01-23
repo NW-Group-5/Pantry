@@ -16,7 +16,8 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     Recipe.associate = function (models) {
-        Recipe.BelongsToMany(models.UserAccount, {
+        Recipe.belongsTo(models.UserAccount, {
+            
         });
     };
 

@@ -4,11 +4,16 @@
   "description": "\"The Pantry\" is a platform that allows users to create a personalized profile of what is inside their pantry and provide suggested recipes based on pantry inventory",
   "main": "server.js",
   "dependencies": {
+    "bcrypt": "^5.0.0",
+    "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
+    "express-session": "^1.17.1",
     "handlebars": "^4.7.6",
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
     "sequelize": "^6.4.0"
   },
   "devDependencies": {},
