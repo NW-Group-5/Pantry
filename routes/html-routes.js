@@ -41,16 +41,15 @@ module.exports = function (app) {
 
     //route with handlebars
     app.get("/pantry/:id", isAuthenticated, function (req, res) {
-        console.log('2');
         db.Ingredient.findAll({
             where: {
-                UserAccountID: req.params.id
+                UserAccountId: req.params.id
             }
         })
         .then(function (ingredients) {
             db.Recipe.findAll({
                 where: {
-                    UserAccountID: req.params.id
+                    UserAccountId: req.params.id
                 }
             })
             .then(function (recipes) {
