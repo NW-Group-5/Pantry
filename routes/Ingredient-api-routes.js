@@ -9,9 +9,18 @@ module.exports = function (app) {
                 UserAccountID: UserAccountID
             }
         })
-            .then(function (dbPost) {
-                res.json(dbPost);
+            .then(function (dbIngredient) {
+                res.json(dbIngredient);
             });
     });
-
+    // POST route for adding ingredients
+    app.post("/api/Ingredients", function (req, res) {
+        db.Ingredient.create({
+            name: req.body.name,
+            aisle: req.body.aisle
+        })
+            .then(function (dbIngredient) {
+                res.json(dbIngredient);
+            });
+    });
 }
