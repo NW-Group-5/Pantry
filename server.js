@@ -24,9 +24,10 @@ app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true 
 app.use(passport.initialize());
 app.use(passport.session());
 
-// requiring all routes
+// requiring routes
 require("./routes/html-routes.js")(app);
 require("./routes/Ingredient-api-routes.js")(app);
+require("./routes/Recipe-api-routes.js")(app);
 require("./routes/UserAccount-api-routes.js")(app);
 require("./routes/spoonacular-routes")(app);
 
