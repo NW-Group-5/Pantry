@@ -26,6 +26,7 @@ app.use(passport.session());
 
 require("./routes/html-routes.js")(app);
 require("./routes/Ingredient-api-routes.js")(app);
+require("./routes/Recipe-api-routes.js")(app);
 require("./routes/UserAccount-api-routes.js")(app);
 require("./routes/spoonacular-routes")(app);
 
