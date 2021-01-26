@@ -11,7 +11,7 @@
     <div class="container">
         <h1 class="brand">Sign Up</h1>
 
-        <form id='signup' class='signup' action="/pantry" method="POST">
+        <form id='signup' class='signup' action="/api/signup" method="POST">
             <h2>Create A Username</h2>
             <label for="username" class="">Username<label>
             <input name="username" class="username" id="username" type="text" placeholder="Create Username">
@@ -20,7 +20,7 @@
             <input name="password" id="password"  type="text" placeholder="Create Password">     
             <br>      
             <label for="confirmpassword" class="">Confirm<label>
-            <input name="confirmpassword" id="confirmpassword" type="text" placeholder="Confirm Password">        
+            <input id="confirmpassword" type="text" placeholder="Confirm Password">        
             <br>
             <input name="submit" id="sumbit" type="submit" value="Let's Get Cookin!">
             </p>
