@@ -25,5 +25,16 @@ module.exports = function (app) {
                 res.json(dbRecipe);
             });
     });
+    // DELETE route for deleting recipes
+    app.delete("/api/Recipes/:id", function (req, res) {
+        db.Post.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+            .then(function (dbRecipe) {
+                res.json(dbRecipe);
+            });
+    });
 }
 
