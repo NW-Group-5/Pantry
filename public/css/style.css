@@ -44,6 +44,11 @@
   flex: 1;
   max-width: 90%;
 }
+.sign-image {
+  flex: 0;
+  max-height: 8rem !important;
+}
+
 .signup input {
   display: block;
   box-sizing: border-box;
