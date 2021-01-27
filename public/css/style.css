@@ -144,6 +144,22 @@ header {
   border-radius: 5px;
   background-image: url("./wood-pattern.png");
 }
+
+.ingredient {
+  list-style-type: none;
+  background: var(--white);
+  border-radius: 2px;
+  border: 1px black solid;
+  box-shadow: 2px 2px 2px 2px var(--shadow);
+  padding: .5rem;
+  margin: .5rem;
+}
+.ingredient-on {
+  background: #FF9C6B !important;
+  color: white;
+  border: 1px white solid;
+}
+
 .recipe-container {
   display: flex;
   flex-direction: column;
