@@ -55,6 +55,7 @@
   width: 100%;
   outline: none;
   max-height: 2.5rem;
+  font-size: 1.2rem;
 }
 
 .signup button {
@@ -67,6 +68,7 @@
   color: rgb(51, 134, 26);
   font-size: 1rem;
   font-weight: 600;
+  letter-spacing: .01rem;
 }
 
 /*Pantry rules*/
