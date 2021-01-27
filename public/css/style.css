@@ -13,7 +13,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: var(--light-brown);
+  background: url("./wood-pattern.png") var(--light-brown);
   height: 100vh;
 }
 
@@ -21,25 +21,52 @@
   box-sizing: border-box;
   width: 100%;
   text-align: center;
-  background: var(--light-brown);
   padding: 2rem;
   font-size: 4rem;
 }
 
-.login-form {
-  background: var(--light-brown);
+.signup {
+  background: var(--white);
+  background-clip: content-box;
+  border: solid black 3px;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
   flex: 1;
-  min-width: 100%;
+  width: 50%;
+  max-width: 31rem;
+  min-width: 19rem;
+  max-height: 25rem;
+  padding: 1rem;
 }
 
-.login-form > * {
-  margin: 0.5rem;
+.signup > * {
+  margin: .5rem;
   text-align: center;
+  flex: 1;
+  max-width: 90%;
+}
+
+.signup input {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  outline: none;
+  max-height: 2.5rem;
+}
+
+.signup button {
+  font-size: 1.2rem;
+  max-height: 2rem;
+}
+
+.signup a {
+  text-decoration: none;
+  color: rgb(51, 134, 26);
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 /*Pantry rules*/
@@ -248,49 +275,4 @@ header {
 
 .jumbo-steps > * {
   padding: 1rem;
-}
-
-.signup {
-  background: rgb(232, 233, 221);
-  align-items: center;
-  padding: 4em 4em 2em;
-  max-width: 400px;
-  margin: 50px auto 0;
-  box-shadow: 0 0 1em #222;
-  border-radius: 2px;
-}
-
-input {
-  display: block;
-  box-sizing: border-box;
-  width: 100%;
-  outline: none;
-  margin: 0;
-}
-
-.username {
-  margin: 0 0 3em 0;
-  position: relative;
-  box-sizing: border-box;
-  width: 100%;
-  outline: none;
-  margin: 0;
-}
-
-.password {
-  margin: 0 0 3em 0;
-  position: relative;
-  box-sizing: border-box;
-  width: 100%;
-  outline: none;
-  margin: 0;
-}
-
-.confirmpassword {
-  margin: 0 0 3em 0;
-  position: relative;
-  box-sizing: border-box;
-  width: 100%;
-  outline: none;
-  margin: 0;
 }
