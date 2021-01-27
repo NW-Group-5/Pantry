@@ -29,7 +29,6 @@ $(document).ready(function() {
         });
     });
 });
-
 //Function that renders the recipe data to the page
 const renderRecipe = data => {
     let $recipeDiv = $('.jumbo');
@@ -40,7 +39,6 @@ const renderRecipe = data => {
     let $recipeIngredients = $('<ul class="jumbo-ingredients"></ul>');
     let $recipeSteps = $('<ul class="jumbo-steps"></ul>');
     let $close = $('<button class="jumbo-close"><i class="far fa-times-circle"></i></button>');
-
     $recipeDiv.css('visibility', 'visible');
     $blurDiv.css('visibility', 'visible');
     $recipeDiv.append($close);
@@ -49,7 +47,6 @@ const renderRecipe = data => {
     $recipeDiv.append($recipeSummary);
     $recipeDiv.append($recipeIngredients);
     $recipeDiv.append($recipeSteps);
-
     data.ingredients.forEach(ingredient => {
         let ingItem = $(`<li class='jumbo-ingredient'>${ingredient}</li>`);
         $recipeIngredients.append(ingItem);
@@ -58,7 +55,6 @@ const renderRecipe = data => {
         let stepItem = $(`<li class='jumbo-step'>${step.number}. ${step.step}</li>`);
         $recipeSteps.append(stepItem);
     });
-
     let summaryLinks = Array($('.jumbo-summary a'));
     summaryLinks.forEach($link => {
         $link.attr('href', '');
@@ -80,10 +76,8 @@ const renderRecipe = data => {
         $('.jumbo-close').html('<i class="far fa-times-circle"></i>');
     });
 };
-
 let $ingredientSearch = $('#ingredient-input');
 let $ingredientAdd = $('.submit-ingredient');
-
 //Function to provide suggestions to the ingredient search bar
 const ingredientSearchHandler = (event) => {
     let value = $(event.currentTarget).val();
@@ -97,13 +91,11 @@ const ingredientSearchHandler = (event) => {
                 nameArray.push(titleWord);
             });
             let name = nameArray.join(' ');
-
             let $name = $(`<option name=${name}>${name}</option>`);
             $('#ingredients').append($name);
         });
     });
 };
-
 $ingredientSearch.on('keyup', ingredientSearchHandler);
 $ingredientAdd.on('click', event => {
     event.preventDefault();

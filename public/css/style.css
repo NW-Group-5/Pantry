@@ -84,7 +84,6 @@ header {
   color: black;
   padding: 2rem;
 }
-
 .brand-img {
   content: url("../img/PantryLogo.png");
   display: block;
@@ -141,7 +140,6 @@ header {
   border-radius: 5px;
   background-image: url("./wood-pattern.png");
 }
-
 .ingredient {
   list-style-type: none;
   background: var(--white);
@@ -151,7 +149,6 @@ header {
   padding: .5rem;
   margin: .5rem;
 }
-
 .recipe-container {
   display: flex;
   flex-direction: column;
@@ -174,7 +171,6 @@ header {
   border-radius: 5px;
   background-image: url("./wood-pattern.png");
 }
-
 .empty-data {
   background: var(--white);
   font-size: 1.5rem;
@@ -187,14 +183,12 @@ header {
   align-items: center;
   flex-direction: column;
 }
-
 .empty-data h1 {
   font-size: 2rem;
   font-weight: 800;
   margin-top: 3rem;
   margin-bottom: 1rem;
 }
-
 /*Recipe pop-up rules*/
 .blur {
   position: fixed;
