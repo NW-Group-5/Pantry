@@ -22,7 +22,6 @@ $(document).ready(function() {
                         recipeSteps: data[0].steps,
                         summary: summary
                     };
-                    console.log(recipeData)
                     //Calls the jumbotron render
                     renderRecipe(recipeData);
                 });
@@ -65,7 +64,6 @@ const renderRecipe = data => {
         $link.attr('href', '');
     });
     $('.jumbo-close').click((event) => {
-        console.log(event);
         $recipeDiv.html('');
         $recipeDiv.css('visibility', 'hidden');
         $blurDiv.css('visibility', 'hidden');
@@ -83,20 +81,45 @@ const renderRecipe = data => {
     });
 };
 
-let $ingredientSearch = $('#ingredient-input'); 
+let $ingredientSearch = $('#ingredient-input');
+let $ingredientAdd = $('.submit-ingredient');
 
 //Function to provide suggestions to the ingredient search bar
 const ingredientSearchHandler = (event) => {
     let value = $(event.currentTarget).val();
     if (value.length > 15) return;
     $.get(`/api/spoon/suggestions/${value}`, (data) => {
-        console.log(JSON.parse(data));
         $('#ingredients').html('');
         JSON.parse(data).forEach(ingredient => {
-            let $name = $(`<option name=${ingredient.name}>${ingredient.name}</option>`);
+            let nameArray = [];
+            ingredient.name.split(' ').forEach(word => {
+                let titleWord = word.charAt(0).toUpperCase() + word.substring(1);
+                nameArray.push(titleWord);
+            });
+            let name = nameArray.join(' ');
+
+            let $name = $(`<option name=${name}>${name}</option>`);
             $('#ingredients').append($name);
         });
     });
 };
 
 $ingredientSearch.on('keyup', ingredientSearchHandler);
+$ingredientAdd.on('click', event => {
+    event.preventDefault();
+    let value = $ingredientSearch.val();
+    let options = $('option');
+    for (let option in options) {
+        if (options[option].value === value) {
+            $.post('/api/Ingredients', {
+                name: value,
+                UserAccountId: $('.brand-img').data('id')
+            }).then(data => {
+                $ingredientSearch.val('');
+            });
+            return;
+        };
+    };
+    $ingredientSearch.val('');
+    alert('Invalid ingredient!');
+});

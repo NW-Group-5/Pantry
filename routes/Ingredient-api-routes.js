@@ -17,7 +17,8 @@ module.exports = function (app) {
     app.post("/api/Ingredients", function (req, res) {
         db.Ingredient.create({
             name: req.body.name,
-            aisle: req.body.aisle
+            aisle: req.body.aisle,
+            UserAccountId: req.body.UserAccountId
         })
             .then(function (dbIngredient) {
                 res.json(dbIngredient);

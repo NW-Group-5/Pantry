@@ -46,9 +46,8 @@ module.exports = function (app) {
                 }
             })
             .then(function (recipes) {
-                res.render('pantry', {ingredients: ingredients, recipes: recipes});
+                res.render('pantry', {ingredients: ingredients, recipes: recipes, id: req.params.id});
             });
         });
     });
 };
-;
