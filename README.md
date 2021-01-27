@@ -13,7 +13,7 @@ https://github.com/NW-Group-5/5-Dollar-Idea
 Deployed Heroku application:
 https://pantry-group5.herokuapp.com/
 
-# Prerequisites / Dependencies
+## Prerequisites / Dependencies
 * **node**
 * **express**
 * **express-session**
@@ -22,18 +22,26 @@ https://pantry-group5.herokuapp.com/
 * **bcryptjs**
 * **request**
 
-# Languages Used
+## Dependencies
+node
+express
+express-session
+sequelize
+passport-local
+bcryptjs
+
+## Languages Used
 * **HTML**
 * **CSS**
 * **Javascript**
 * **SQL**
 
-# Usage
+## Usage
 User logs into their "pantry" profile page.
 User can search by ingrediant and select validated ingredients to in their personal "pantry".
 User can then search for recipes based on what has been entered into their "panty".
 
-# Team Members and Contributions
+## Team Members and Contributions
 Chris Carlson
 Tim Hackel
 Joseph Kelly
