@@ -33,5 +33,15 @@ $(document).ready(function() {
 });
 
 
-
+// function to ensure matching passwords
+$(document).ready(function () {
+  $("#confirmpassword").on('keyup', function(){
+  var password = $("#password").val();
+  var confirmPassword = $("#confirmpassword").val();
+  if (password != confirmPassword)
+  $("#CheckPasswordMatch").html("Password does not match ").css("color","red");
+  else
+  $("#CheckPasswordMatch").html("Password match!").css("color","green");
+  });
+  });
 
