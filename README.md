@@ -13,7 +13,7 @@ https://github.com/NW-Group-5/5-Dollar-Idea
 Deployed Heroku application:
 https://pantry-group5.herokuapp.com/
 
-## Prerequisites / Dependencies
+# Prerequisites / Dependencies
 * **node**
 * **express**
 * **express-session**
@@ -22,15 +22,7 @@ https://pantry-group5.herokuapp.com/
 * **bcryptjs**
 * **request**
 
-## Dependencies
-node
-express
-express-session
-sequelize
-passport-local
-bcryptjs
-
-## Languages Used
+# Languages Used
 * **HTML**
 * **CSS**
 * **Javascript**

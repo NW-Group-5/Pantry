@@ -149,6 +149,11 @@ header {
   padding: .5rem;
   margin: .5rem;
 }
+.ingredient-on {
+  background: #FF9C6B !important;
+  color: white;
+  border: 1px white solid;
+}
 .recipe-container {
   display: flex;
   flex-direction: column;

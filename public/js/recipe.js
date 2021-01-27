@@ -84,6 +84,7 @@ const ingredientSearchHandler = (event) => {
     if (value.length > 15) return;
     $.get(`/api/spoon/suggestions/${value}`, (data) => {
         $('#ingredients').html('');
+        console.log(data)
         JSON.parse(data).forEach(ingredient => {
             let nameArray = [];
             ingredient.name.split(' ').forEach(word => {
@@ -115,3 +116,7 @@ $ingredientAdd.on('click', event => {
     $ingredientSearch.val('');
     alert('Invalid ingredient!');
 });
+//function to change ingredient class on click
+$(".ingredient").on("click", event => {
+    $(event.currentTarget).toggleClass("ingredient-on")
+})
