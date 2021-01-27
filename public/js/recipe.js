@@ -119,22 +119,30 @@ $ingredientAdd.on('click', event => {
 
 //Function generate cards for recipes
 const createRecipeCard = recipeData => {
-    let $recipeContainer = $('.recipes');
-    let $recipeCard = $(`<div class="recipe-card" data-id=${recipeData.id}><img src=${recipeData.image} class="card-img" alt=${recipeData.name}><div class="card-body"><h5 class="card-title">${recipeData.name}</h5><p class="card-text">${recipeData.summary}</p></div></div>`);
+    let $recipeContainer = $('body');
+    let $recipeCard = $(`<div class="recipe-card" data-id=${recipeData.id}><img src=${recipeData.image} class="card-img" alt=${recipeData.title}><div class="card-body"><h5 class="card-title">${recipeData.title}</h5></div></div>`);
     $recipeContainer.append($recipeCard);
 };
 
 //Recipe search function
 const recipeSearch = () => {
-    let ingredients = Array($('.ingredient-on')).map(ingredient => ingredient = ingredient.text()).join(',+');
-    console.log(ingredients);
-    $.get(`/api/spoon/byingredients/${ingredients}`, data => {
-        console.log(data);
-        data.forEach(recipe => {
+    let $ingredients = $('.ingredient-on');
+    let ingredientArray = [];
+    for (let i = 0; i < $ingredients.length; i++) {
+        ingredientArray.push($ingredients[i].innerText.split(' ').join(''));
+    };
+    let ingredientString = ingredientArray.join(',+');
+
+    $.get(`/api/spoon/byingredients/${ingredientString}`, data => {
+        console.log(JSON.parse(data));
+        JSON.parse(data).forEach(recipe => {
             createRecipeCard(recipe);
         });
     })
-}
+};
+
+$('.recipe-search').on('click', recipeSearch);
+
 //function to change ingredient class on click
 $(".ingredient").on("click", event => {
     $(event.currentTarget).toggleClass("ingredient-on")
