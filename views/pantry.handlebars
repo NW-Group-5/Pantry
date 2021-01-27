@@ -1,7 +1,6 @@
 <div class="pantry-container">
     <header>
-        <img class='brand-img'>
-        {{!-- <h1 class='pantry-brand'>My Pantry</h1> --}}
+        <img class='brand-img' data-id={{id}}>
         <nav></nav>
     </header>
     <div class="blur"></div>
@@ -10,7 +9,7 @@
         <div class="ingredient-container">
             <div class="search">
                 <form>
-                    <input id='ingredient-input' list="ingredients" name="ingredient">
+                    <input id='ingredient-input' list="ingredients" name="ingredient" autocomplete="off">
                     <datalist id="ingredients">
                     </datalist>
                     <button class="submit-ingredient">Add Ingredient</button>
@@ -19,11 +18,13 @@
             <div class="ingredients">
                 {{#if ingredients}}
                 {{#each ingredients}}
-                    <li class="ingredient">{{name}}<span class="aisle">{{aisle}}</span></li>
+                    <li class="ingredient">{{this.dataValues.name}}</li>
                 {{/each}}
                 {{else}}
-                    <h1>Your pantry is empty!</h1>
-                    <p>Use the ingredient search above to start stocking up.</p>
+                    <div class="empty-data">
+                        <h1>No ingredients saved.</h1>
+                        <p>Search for ingredients above!</p>
+                    </div>
                 {{/if}}
             </div>
         </div>
@@ -31,25 +32,20 @@
             <div class="recipes">
                 {{#if recipes}}
                 {{#each recipes}}
-                    <div class="recipe-card" data-id={{recipe_id}}>
-                        <img src={{image}} class="card-img" alt={{name}}>
+                    <div class="recipe-card" data-id={{this.dataValues.recipe_id}}>
+                        <img src={{this.dataValues.image}} class="card-img" alt={{this.dataValues.name}}>
                         <div class="card-body">
-                            <h5 class="card-title">{{name}}</h5>
-                            <p class="card-text">{{summary}}</p>
+                            <h5 class="card-title">{{this.dataValues.name}}</h5>
+                            <p class="card-text">{{this.dataValues.summary}}</p>
                         </div>
                     </div>
                 {{/each}}
                 {{else}}
-                    <h1>You need ingredients!</h1>
-                    <p>Select ingredients to begin reciepe search</p>
-                {{/if}}
-                <div class="recipe-card" data-id='746613'>
-                        <img src='' class="card-img" alt=''>
-                        <div class="card-body">
-                            <h5 class="card-title">Example</h5>
-                            <p class="card-text">Example</p>
-                        </div>
+                    <div class="empty-data">
+                        <h1>No recipes saved.</h1>
+                        <p>Search and save recipes using your ingredients!</p>
                     </div>
+                {{/if}}
             </div>
         </div>
     </div>
