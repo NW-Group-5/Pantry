@@ -68,6 +68,10 @@
   font-weight: 600;
   letter-spacing: .01rem;
 }
+.sign-image {
+  flex: 0;
+  max-height: 8rem !important;
+}
 /*Pantry rules*/
 .pantry-container {
   display: flex;
@@ -89,13 +93,17 @@ header {
   color: black;
   padding: 2rem;
 }
+
 .brand-img {
   content: url("../img/PantryLogo.png");
   display: block;
   margin-bottom: 0;
   margin-left: auto;
   margin-right: auto;
+  width: auto;
+  flex: 0;
   height: 10rem;
+  padding-top: 1.0rem;
 }
 .body-container {
   display: flex;
@@ -133,10 +141,6 @@ header {
 }
 .ingredients {
   flex: 4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   background-color: var(--transparent);
   margin: 2rem;
   padding: 1rem;
@@ -145,6 +149,7 @@ header {
   border-radius: 5px;
   background-image: url("./wood-pattern.png");
 }
+
 .ingredient {
   list-style-type: none;
   background: var(--white);
@@ -154,6 +159,12 @@ header {
   padding: .5rem;
   margin: .5rem;
 }
+.ingredient-on {
+  background: #FF9C6B !important;
+  color: white;
+  border: 1px white solid;
+}
+
 .recipe-container {
   display: flex;
   flex-direction: column;
@@ -168,31 +179,9 @@ header {
   padding: 1rem;
   width: 80%;
   flex: 1;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   box-shadow: 8px 8px 20px 5px var(--shadow);
   border-radius: 5px;
   background-image: url("./wood-pattern.png");
-}
-.empty-data {
-  background: var(--white);
-  font-size: 1.5rem;
-  text-align: center;
-  height: 90%;
-  width: 90%;
-  border-radius: 5px;
-  display: flex;
-  justify-content: right;
-  align-items: center;
-  flex-direction: column;
-}
-.empty-data h1 {
-  font-size: 2rem;
-  font-weight: 800;
-  margin-top: 3rem;
-  margin-bottom: 1rem;
 }
 /*Recipe pop-up rules*/
 .blur {
