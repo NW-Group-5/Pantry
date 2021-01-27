@@ -4,7 +4,8 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING
       },
       aisle: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        allownull: true
       }
     });
   
