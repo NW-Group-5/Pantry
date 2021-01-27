@@ -24,6 +24,7 @@ app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true 
 app.use(passport.initialize());
 app.use(passport.session());
 
+// requiring routes
 require("./routes/html-routes.js")(app);
 require("./routes/Ingredient-api-routes.js")(app);
 require("./routes/Recipe-api-routes.js")(app);
@@ -41,7 +42,6 @@ app.set("view engine", "handlebars")
 
 //require models
 const db = require("./models")
-
 
 
 //use sequeliize when starting express app

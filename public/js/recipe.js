@@ -83,3 +83,20 @@ const renderRecipe = data => {
     });
 };
 
+let $ingredientSearch = $('#ingredient-input'); 
+
+//Function to provide suggestions to the ingredient search bar
+const ingredientSearchHandler = (event) => {
+    let value = $(event.currentTarget).val();
+    if (value.length > 15) return;
+    $.get(`/api/spoon/suggestions/${value}`, (data) => {
+        console.log(JSON.parse(data));
+        $('#ingredients').html('');
+        JSON.parse(data).forEach(ingredient => {
+            let $name = $(`<option name=${ingredient.name}>${ingredient.name}</option>`);
+            $('#ingredients').append($name);
+        });
+    });
+};
+
+$ingredientSearch.on('keyup', ingredientSearchHandler);

@@ -1,6 +1,7 @@
 <div class="pantry-container">
     <header>
-        <h1 class='pantry-brand'>My Pantry</h1>
+        <img class='brand-img'>
+        {{!-- <h1 class='pantry-brand'>My Pantry</h1> --}}
         <nav></nav>
     </header>
     <div class="blur"></div>
@@ -9,7 +10,7 @@
         <div class="ingredient-container">
             <div class="search">
                 <form>
-                    <input list="ingredients" name="ingredient">
+                    <input id='ingredient-input' list="ingredients" name="ingredient">
                     <datalist id="ingredients">
                     </datalist>
                     <button class="submit-ingredient">Add Ingredient</button>
