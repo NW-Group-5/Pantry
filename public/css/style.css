@@ -6,7 +6,6 @@
   --white: rgb(232, 233, 221);
   --transparent: rgba(255, 255, 255, 0.1);
 }
-
 /*Login/Sign-up rules*/
 .container {
   display: flex;
@@ -16,7 +15,6 @@
   background: url("./wood-pattern.png") var(--brown);
   height: 100vh;
 }
-
 .brand {
   box-sizing: border-box;
   width: 100%;
@@ -24,7 +22,6 @@
   padding: 2rem;
   font-size: 4rem;
 }
-
 .signup {
   background: var(--white);
   background-clip: content-box;
@@ -41,14 +38,12 @@
   max-height: 25rem;
   padding: 1rem;
 }
-
 .signup > * {
   margin: .5rem;
   text-align: center;
   flex: 1;
   max-width: 90%;
 }
-
 .signup input {
   display: block;
   box-sizing: border-box;
@@ -57,12 +52,10 @@
   max-height: 2.5rem;
   font-size: 1.2rem;
 }
-
 .signup button {
   font-size: 1.2rem;
   max-height: 2rem;
 }
-
 .signup a {
   text-decoration: none;
   color: rgb(51, 134, 26);
@@ -70,7 +63,6 @@
   font-weight: 600;
   letter-spacing: .01rem;
 }
-
 /*Pantry rules*/
 .pantry-container {
   display: flex;
@@ -80,7 +72,6 @@
   background-color: var(--white);
   height: 100vh;
 }
-
 header {
   box-sizing: border-box;
   padding: 2rem;
@@ -88,13 +79,20 @@ header {
   box-shadow: 0px 10px 10px 5px var(--shadow);
   z-index: 1;
 }
-
 .pantry-brand {
   font-size: 4rem;
   color: black;
   padding: 2rem;
 }
 
+.brand-img {
+  content: url("../img/PantryLogo.png");
+  display: block;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
 .body-container {
   display: flex;
   flex-direction: row;
@@ -105,11 +103,9 @@ header {
   background-position: -10%;
   background-color: var(--brown);
 }
-
 .body-container > * {
   flex: 1;
 }
-
 .ingredient-container {
   display: flex;
   flex-direction: column;
@@ -118,7 +114,6 @@ header {
   margin: 2rem;
   height: 80%;
 }
-
 .search {
   flex: 1;
   background-color: var(--transparent);
@@ -132,7 +127,6 @@ header {
   border-radius: 5px;
   background-image: url("./wood-pattern.png");
 }
-
 .ingredients {
   flex: 4;
   background-color: var(--transparent);
@@ -143,7 +137,6 @@ header {
   border-radius: 5px;
   background-image: url("./wood-pattern.png");
 }
-
 .recipe-container {
   display: flex;
   flex-direction: column;
@@ -152,7 +145,6 @@ header {
   height: 80%;
   margin-right: 2rem;
 }
-
 .recipes {
   background-color: var(--transparent);
   margin: 2rem;
@@ -163,7 +155,6 @@ header {
   border-radius: 5px;
   background-image: url("./wood-pattern.png");
 }
-
 /*Recipe pop-up rules*/
 .blur {
   position: fixed;
@@ -177,7 +168,6 @@ header {
   background: rgb(0, 0, 0, 0.5);
   visibility: hidden;
 }
-
 .jumbo {
   position: absolute;
   top: 25vh;
@@ -196,18 +186,15 @@ header {
   box-shadow: 2px 2px 10px 2px var(--shadow);
   visibility: hidden;
 }
-
 .jumbo {
   /* Hide scrollbar for IE, Edge and Firefox */
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
-
 .jumbo::-webkit-scrollbar {
   /* Hide scrollbar for Chrome, Safari and Opera */
   display: none;
 }
-
 .jumbo-close {
   position: absolute;
   right: 0.3rem;
@@ -220,47 +207,39 @@ header {
   font-size: 1.5rem;
   text-align: center;
 }
-
 .jumbo-close:focus,
 .jumbo-close:hover {
   outline: none;
   border: none;
 }
-
 .jumbo-close i {
   pointer-events: none;
 }
-
 .jumbo-close i:hover {
   cursor: pointer;
 }
-
 .jumbo-image {
   width: calc(100% - 8rem);
   margin: 1rem auto;
   padding: 0.5rem;
   border: 1px var(--shadow) solid;
 }
-
 .jumbo-name {
   font-size: 4rem;
   font-weight: 600;
   text-align: center;
   margin: 2rem 0 1rem 0;
 }
-
 .jumbo-summary {
   font-size: 1.2rem;
   margin: 1rem 4rem;
   line-height: 1.6rem;
 }
-
 .jumbo-summary a {
   pointer-events: none;
   text-decoration: none;
   color: black;
 }
-
 .jumbo-ingredients {
   font-size: 1.2rem;
   line-height: 1.6rem;
@@ -268,13 +247,11 @@ header {
   border: 1px solid var(--shadow);
   padding: 0.5rem;
 }
-
 .jumbo-steps {
   font-size: 1.2rem;
   line-height: 1.6rem;
   margin: 1rem 4rem 2rem 4rem;
 }
-
 .jumbo-steps > * {
   padding: 1rem;
 }
