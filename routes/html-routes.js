@@ -13,7 +13,6 @@ module.exports = function (app) {
     app.get("/", function (req, res) {
         // If the user already has an account send them to the pantry page
         if (req.user) {
-            // console.log(req.user)
             db.Ingredient.findAll({
                 where: {
                     UserAccountID: req.user.id
@@ -41,6 +40,10 @@ module.exports = function (app) {
 
     //route with handlebars
     app.get("/pantry/:id", isAuthenticated, function (req, res) {
+        if (+req.user.id !== +req.params.id) {
+            res.redirect(`/pantry/${req.user.id}`);
+        };
+
         db.Ingredient.findAll({
             where: {
                 UserAccountId: req.params.id

@@ -13,7 +13,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url("./wood-pattern.png") var(--light-brown);
+  background: url("./wood-pattern.png") var(--brown);
   height: 100vh;
 }
 
