@@ -106,9 +106,8 @@ const renderRecipe = data => {
     });
 
     if (searchActive) {
-        // $addRecipe.on('click', createRecipe);
+        $addRecipe.on('click', createRecipe);
     };
-
     //Hides infoDiv and blur if necessary
     if (!searchActive) {
         $('.blur').on('click', () => {
@@ -228,3 +227,33 @@ $('.recipe-search').on('click', recipeSearch);
 $(".ingredient").on("click", event => {
     $(event.currentTarget).toggleClass("ingredient-on")
 })
+
+//create recipe in db post method
+//render recipe to recipe div
+
+//Adds recipe to database
+const createRecipe = () => {
+    $.post('/api/Recipes', {
+        name: $('.jumbo-name').text(),
+        recipeID: $('.jumbo-name').data('id'),
+        summary: $('.jumbo-summary').text(),
+        imageURL: $('.jumbo-image').attr('src'),
+        UserAccountId: $('.brand-img').data('id')
+    }).then(data => {
+        createFavoriteRecipeCard(data)
+        $(".empty-data").css("visibility", "hidden")
+        $blurDiv.css("visibility", "hidden")
+        $recipeDiv.css("visibility", "hidden").html("")
+        $searchContainer.css("visibility", "hidden").html("")
+    moreInfo = false
+    searchActive = false
+    });
+
+};
+
+//Render recipe to favorites
+const createFavoriteRecipeCard = favoriteRecipe => {
+    let $recipeCard = $(`<div class="recipe-card" data-id=${favoriteRecipe.id}><img src=${favoriteRecipe.imageURL} class="card-img" alt=${favoriteRecipe.name}><div class="card-body"><h5 class="card-title">${favoriteRecipe.name}</h5></div></div>`);
+    $recipeCard.on('click', getRecipeData);
+    $(".recipes").append($recipeCard);
+};
