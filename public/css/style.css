@@ -216,6 +216,7 @@ header {
   margin-bottom: 1rem;
 }
 
+
 /*Recipe pop-up rules*/
 .blur {
   position: fixed;
@@ -315,4 +316,29 @@ header {
 }
 .jumbo-steps > * {
   padding: 1rem;
+}
+
+.noMatch {
+  color: red;
+}
+
+.match {
+  color: green;
+}
+
+.loginMatch {
+  color: red;
+}
+
+.logout {
+  color: #fda477;
+  font-size: 35pt;
+  text-decoration: none;
+ 
+  
+}
+
+
+.navLogout {
+  text-align: right;
 }

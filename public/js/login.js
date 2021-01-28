@@ -30,7 +30,11 @@ $(document).ready(function() {
         })
         .catch(function(err) {
           console.log(err);
+          $("#LoginMatch").html("Password & Username do not match").addClass("loginMatch");
         });
     }
   });
+
+
+
 
