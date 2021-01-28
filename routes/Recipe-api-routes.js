@@ -19,7 +19,8 @@ module.exports = function (app) {
             name: req.body.name,
             recipeID: req.body.recipeID,
             summary: req.body.summary,
-            imageURL: req.body.imageURL
+            imageURL: req.body.imageURL,
+            UserAccountId: req.body.UserAccountId
         })
             .then(function (dbRecipe) {
                 res.json(dbRecipe);

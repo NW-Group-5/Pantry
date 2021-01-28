@@ -7,7 +7,7 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING
         },
         summary: {
-            type: DataTypes.STRING
+            type: DataTypes.TEXT
         },
         imageURL: {
             type: DataTypes.STRING
