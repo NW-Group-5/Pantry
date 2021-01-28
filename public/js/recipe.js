@@ -22,6 +22,7 @@ const getRecipeData = (event) => {
                 let ingredients = data2.extendedIngredients.map(ingredient => ingredient.original);
                 //Creates the data to send into our render function
                 let recipeData = {
+                    id: id,
                     name: data2.title,
                     ingredients: ingredients,
                     imgURL: data2.image,
@@ -56,12 +57,13 @@ const renderRecipe = data => {
     moreInfo = true;
     //Creates info elements
     let $recipeImg = $(`<img class="jumbo-image" src=${data.imgURL}>`);
-    let $recipeName = $(`<h1 class='jumbo-name'>${data.name}</h1>`);
+    let $recipeName = $(`<h1 class='jumbo-name' data-id=${data.id}>${data.name}</h1>`);
     let $recipeSummary = $(`<p class='jumbo-summary'>${data.summary}</p>`);
     let $recipeIngredients = $('<ul class="jumbo-ingredients"></ul>');
     let $recipeSteps = $('<ul class="jumbo-steps"></ul>');
     let $close = $('<button class="jumbo-close"><i class="far fa-times-circle"></i></button>');
-    let $addRecipe = $('')
+    let $addRecipe;
+    if (searchActive) $addRecipe = $('<button class="add-recipe">Save Recipe</button>');
     //Makes the info div visible and the blur div visible if it isn't already
     $recipeDiv.css('visibility', 'visible');
     if (!searchActive) $blurDiv.css('visibility', 'visible');
@@ -72,7 +74,7 @@ const renderRecipe = data => {
     $recipeDiv.append($recipeSummary);
     $recipeDiv.append($recipeIngredients);
     $recipeDiv.append($recipeSteps);
-    $recipeDiv.append($addRecipe);
+    if (searchActive) $recipeDiv.append($addRecipe);
     //Adds ingredient list items
     data.ingredients.forEach(ingredient => {
         let ingItem = $(`<li class='jumbo-ingredient'>${ingredient}</li>`);
@@ -102,6 +104,11 @@ const renderRecipe = data => {
     $('.jumbo-close').on('mouseout', () => {
         $('.jumbo-close').html('<i class="far fa-times-circle"></i>');
     });
+
+    if (searchActive) {
+        // $addRecipe.on('click', createRecipe);
+    };
+
     //Hides infoDiv and blur if necessary
     if (!searchActive) {
         $('.blur').on('click', () => {
@@ -153,6 +160,8 @@ $ingredientAdd.on('click', event => {
                 UserAccountId: $('.brand-img').data('id')
             }).then(data => {
                 $ingredientSearch.val('');
+                let $newLi = $(`<li class="ingredient">${data.name}</li>`);
+                $('.ingredients ul').append($newLi);
             });
             return;
         };

@@ -15,13 +15,15 @@
                     </datalist>
                     <button class="submit-ingredient">Add Ingredient</button>
                 </form>
-                <button class='recipe-search'>Search for Recipes</button>
             </div>
             <div class="ingredients">
                 {{#if ingredients}}
+                <ul>
                 {{#each ingredients}}
                     <li class="ingredient">{{this.dataValues.name}}</li>
                 {{/each}}
+                </ul>
+                <button class='recipe-search'>Search for Recipes</button>
                 {{else}}
                     <div class="empty-data">
                         <h1>No ingredients saved.</h1>
@@ -34,8 +36,8 @@
             <div class="recipes">
                 {{#if recipes}}
                 {{#each recipes}}
-                    <div class="recipe-card" data-id={{this.dataValues.recipe_id}}>
-                        <img src={{this.dataValues.image}} class="card-img" alt={{this.dataValues.name}}>
+                    <div class="recipe-card" data-id={{this.dataValues.recipeID}}>
+                        <img src={{this.dataValues.imageURL}} class="card-img" alt={{this.dataValues.name}}>
                         <div class="card-body">
                             <h5 class="card-title">{{this.dataValues.name}}</h5>
                             <p class="card-text">{{this.dataValues.summary}}</p>
