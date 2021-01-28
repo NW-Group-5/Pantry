@@ -104,6 +104,7 @@ const renderRecipe = data => {
     $('.jumbo-close').on('mouseout', () => {
         $('.jumbo-close').html('<i class="far fa-times-circle"></i>');
     });
+
     if (searchActive) {
         $addRecipe.on('click', createRecipe);
     };
@@ -158,6 +159,8 @@ $ingredientAdd.on('click', event => {
                 UserAccountId: $('.brand-img').data('id')
             }).then(data => {
                 $ingredientSearch.val('');
+                let $newLi = $(`<li class="ingredient">${data.name}</li>`);
+                $('.ingredients ul').append($newLi);
             });
             return;
         };

@@ -15,13 +15,15 @@
                     </datalist>
                     <button class="submit-ingredient">Add Ingredient</button>
                 </form>
-                <button class='recipe-search'>Search for Recipes</button>
             </div>
             <div class="ingredients">
                 {{#if ingredients}}
+                <ul>
                 {{#each ingredients}}
                     <li class="ingredient">{{this.dataValues.name}}</li>
                 {{/each}}
+                </ul>
+                <button class='recipe-search'>Search for Recipes</button>
                 {{else}}
                     <div class="empty-data">
                         <h1>No ingredients saved.</h1>
