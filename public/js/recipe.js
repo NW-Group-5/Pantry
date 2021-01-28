@@ -159,7 +159,18 @@ $ingredientAdd.on('click', event => {
                 UserAccountId: $('.brand-img').data('id')
             }).then(data => {
                 $ingredientSearch.val('');
+                $('.ingredients .empty-data').hide();
+
+                let $newUl = $('<ul>')
+                if ($('.ingredients ul').length === 0) $('.ingredients').append($newUl);
+
+                let $newSearch = $(`<button class='recipe-search'>Search for Recipes</button>`)
+                if ($('.ingredients button').length === 0) $('.ingredients').append($newSearch);
+
                 let $newLi = $(`<li class="ingredient">${data.name}</li>`);
+                $newLi.on('click', (event) => {
+                    $(event.currentTarget).toggleClass("ingredient-on");
+                });
                 $('.ingredients ul').append($newLi);
             });
             return;
@@ -228,9 +239,6 @@ $(".ingredient").on("click", event => {
     $(event.currentTarget).toggleClass("ingredient-on")
 })
 
-//create recipe in db post method
-//render recipe to recipe div
-
 //Adds recipe to database
 const createRecipe = () => {
     $.post('/api/Recipes', {
@@ -241,7 +249,7 @@ const createRecipe = () => {
         UserAccountId: $('.brand-img').data('id')
     }).then(data => {
         createFavoriteRecipeCard(data)
-        $(".empty-data").css("visibility", "hidden")
+        $(".recipes .empty-data").hide();
         $blurDiv.css("visibility", "hidden")
         $recipeDiv.css("visibility", "hidden").html("")
         $searchContainer.css("visibility", "hidden").html("")
