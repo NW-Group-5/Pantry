@@ -165,8 +165,8 @@ $ingredientAdd.on('click', event => {
                 if ($('.ingredients ul').length === 0) $('.ingredients').append($newUl);
 
                 let $newSearch = $(`<button class='recipe-search'>Search for Recipes</button>`)
+                if ($('.ingredients button').length === 0) $newSearch.on('click', recipeSearch);
                 if ($('.ingredients button').length === 0) $('.ingredients').append($newSearch);
-
                 let $newLi = $(`<li class="ingredient">${data.name}</li>`);
                 $newLi.on('click', (event) => {
                     $(event.currentTarget).toggleClass("ingredient-on");
@@ -261,7 +261,7 @@ const createRecipe = () => {
 
 //Render recipe to favorites
 const createFavoriteRecipeCard = favoriteRecipe => {
-    let $recipeCard = $(`<div class="recipe-card" data-id=${favoriteRecipe.id}><img src=${favoriteRecipe.imageURL} class="card-img" alt=${favoriteRecipe.name}><div class="card-body"><h5 class="card-title">${favoriteRecipe.name}</h5></div></div>`);
+    let $recipeCard = $(`<div class="recipe-card" data-id=${favoriteRecipe.recipeID}><img src=${favoriteRecipe.imageURL} class="card-img" alt=${favoriteRecipe.name}><div class="card-body"><h5 class="card-title">${favoriteRecipe.name}</h5></div></div>`);
     $recipeCard.on('click', getRecipeData);
     $(".recipes").append($recipeCard);
 };
