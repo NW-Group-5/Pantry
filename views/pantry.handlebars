@@ -34,11 +34,10 @@
             <div class="recipes">
                 {{#if recipes}}
                 {{#each recipes}}
-                    <div class="recipe-card" data-id={{this.dataValues.recipe_id}}>
-                        <img src={{this.dataValues.image}} class="card-img" alt={{this.dataValues.name}}>
+                    <div class="recipe-card" data-id={{this.dataValues.recipeID}}>
+                        <img src={{this.dataValues.imageURL}} class="card-img" alt={{this.dataValues.name}}>
                         <div class="card-body">
                             <h5 class="card-title">{{this.dataValues.name}}</h5>
-                            <p class="card-text">{{this.dataValues.summary}}</p>
                         </div>
                     </div>
                 {{/each}}
