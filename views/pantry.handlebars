@@ -1,10 +1,11 @@
 <div class="pantry-container">
     <header>
+        <nav class="navLogout"> <a class="logout" href="/api/logout">Log Out</a></nav>
         <img class='brand-img' data-id={{id}}>
-        <nav></nav>
     </header>
     <div class="blur"></div>
     <div class="jumbo"></div>
+    <div class="search-container"></div>
     <div class="body-container">
         <div class="ingredient-container">
             <div class="search">
@@ -14,13 +15,13 @@
                     </datalist>
                     <button class="submit-ingredient">Add Ingredient</button>
                 </form>
+                <button class='recipe-search'>Search for Recipes</button>
             </div>
             <div class="ingredients">
                 {{#if ingredients}}
                 {{#each ingredients}}
                     <li class="ingredient">{{this.dataValues.name}}</li>
                 {{/each}}
-                    <button class='recipe-search'>Search for Recipes</button>
                 {{else}}
                     <div class="empty-data">
                         <h1>No ingredients saved.</h1>
