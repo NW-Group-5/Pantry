@@ -72,6 +72,29 @@
   flex: 0;
   max-height: 8rem !important;
 }
+
+.noMatch {
+  color: red;
+}
+
+.match {
+  color: green;
+}
+
+.loginMatch {
+  color: red;
+}
+
+.logout {
+  color: #fda477;
+  font-size: 35pt;
+  text-decoration: none; 
+}
+
+.navLogout {
+  text-align: right;
+}
+
 /*Pantry rules*/
 .pantry-container {
   display: flex;
@@ -357,4 +380,3 @@ header {
   border: 1px black solid;
   box-shadow: 2px 2px 10px 2px var(--shadow);
   visibility: hidden;
-}
