@@ -197,6 +197,24 @@ header {
   background-image: url("./wood-pattern.png");
 }
 
+.recipe-card, .search-card {
+  margin: .5rem;
+  padding: .5rem;
+  background: var(--white);
+  box-shadow: 2px 2px 2px 2px var(--shadow);
+  width: 12.5rem;
+  min-height: 14rem;
+}
+
+.card-img {
+  width: 100%;
+  height: auto;
+}
+
+.card-title {
+  margin: 1rem;
+}
+
 .empty-data {
   background: var(--white);
   font-size: 1.5rem;
@@ -216,7 +234,7 @@ header {
   margin-bottom: 1rem;
 }
 
-/*Recipe pop-up rules*/
+/*In-depth recipe pop-up rules*/
 .blur {
   position: fixed;
   top: 0;
@@ -247,12 +265,12 @@ header {
   box-shadow: 2px 2px 10px 2px var(--shadow);
   visibility: hidden;
 }
-.jumbo {
+.jumbo, .search-container {
   /* Hide scrollbar for IE, Edge and Firefox */
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
-.jumbo::-webkit-scrollbar {
+.jumbo::-webkit-scrollbar, .search-container::-webkit-scrollbar {
   /* Hide scrollbar for Chrome, Safari and Opera */
   display: none;
 }
@@ -289,7 +307,7 @@ header {
   font-size: 4rem;
   font-weight: 600;
   text-align: center;
-  margin: 2rem 0 1rem 0;
+  margin: 2rem 1rem 1rem 1rem;
 }
 .jumbo-summary {
   font-size: 1.2rem;
@@ -315,4 +333,28 @@ header {
 }
 .jumbo-steps > * {
   padding: 1rem;
+}
+
+/*Recipe search pop-up rules*/
+.search-container {
+  position: absolute;
+  top: 25vh;
+  bottom: 8vh;
+  height: 67vh;
+  max-width: 45rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  overflow: scroll;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--white);
+  z-index: 8;
+  border: 1px black solid;
+  box-shadow: 2px 2px 10px 2px var(--shadow);
+  visibility: hidden;
 }
