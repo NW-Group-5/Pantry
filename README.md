@@ -3,7 +3,26 @@
 
 ## Description
 
-"The Pantry" is a platform that allows users to create a personalized profile of what is inside their pantry and provide suggested recipes based on pantry inventory.
+Ever stuck with a bunch of ingredients but not sure what you can cook? Pantry brings recipes from your personal pantry to your fingertips.
+
+## Usage
+
+USER creates username and password to create Pantry app account.
+
+![Pantry Login](./screenshots/pantrylogin.png)
+
+USER types in ingredient to ADD ingredient to their pantry.
+
+![Pantry Login](./screenshots/pantryingredientsearch.png)
+
+USER then select which ingredients he’d like to create a recipe with.
+
+![Pantry Login](./screenshots/pantryingredientselect.png)
+
+Once select, USER presses “search” button to find recipes from selected ingredients.
+
+![Pantry Login](./screenshots/pantryrecipeview.png)
+
 
 ## Links
 
@@ -13,28 +32,28 @@ https://github.com/NW-Group-5/5-Dollar-Idea
 Deployed Heroku application:
 https://pantry-group5.herokuapp.com/
 
-# Prerequisites / Dependencies
+## Prerequisites / Dependencies
 * **node**
 * **express**
 * **express-session**
 * **sequelize**
 * **passport-local**
 * **bcryptjs**
-* **request**
+* **requestjs**
 
-# Languages Used
+## Languages Used
 * **HTML**
 * **CSS**
 * **Javascript**
 * **SQL**
 
-## Usage
-User logs into their "pantry" profile page.
-User can search by ingrediant and select validated ingredients to in their personal "pantry".
-User can then search for recipes based on what has been entered into their "panty".
+## Additional Technology Used
+* **Github**
+* **Heroku**
+* **JawsDB**
+* **Spoonacular API**
 
-## Team Members and Contributions
-Chris Carlson
-Tim Hackel
-Joseph Kelly
-Danny Tomkins
+## Team Members
+* **Chris Carlson**
+* **Tim Hackel**
+* **Danny Tomkins**
