@@ -160,6 +160,8 @@ $ingredientAdd.on('click', event => {
             }).then(data => {
                 $ingredientSearch.val('');
                 $('.ingredients .empty-data').hide();
+                // Fixes styling for ingredients
+                document.querySelector('.ingredients').style.justifyContent = 'space-between'; 
 
                 let $newUl = $('<ul>')
                 if ($('.ingredients ul').length === 0) $('.ingredients').append($newUl);
